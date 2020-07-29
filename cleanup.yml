@@ -1,0 +1,19 @@
+---
+- name: cleanup database server
+  hosts: dbsrv
+  become: true
+  tasks:
+    - name: stop mysql 
+      service: 
+        name: mariadb
+        state: stopped
+
+    - name: uninstall mysql related packages
+      package:
+        name: "{{ item }}"
+        state: absent
+      loop:
+        - mysql-server
+        - mysql
+        - mariadb-server
+        - mariadb 

@@ -1,0 +1,9 @@
+[app]
+app2
+
+[dbsrv]
+app2
+
+[staging:children]
+app
+dbsrv

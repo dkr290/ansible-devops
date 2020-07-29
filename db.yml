@@ -1,0 +1,26 @@
+---
+- name: db servers play
+  hosts: dbsrv
+  become: true
+  roles:
+    - { role: geerlingguy.mysql }
+
+  
+  tasks:
+    - name: download database schema
+      get_url:
+        url: https://raw.githubusercontent.com/dkr290/devops-demo-app/master/data/devops-demo-{{ app.version }}.sql
+        dest: /tmp/devops-demo-{{ app.version }}.sql
+        mode: '0440'
+      tags: schema
+
+    - name: schema migrate
+      mysql_db:
+        login_host: "{{ dbconn.host }}"
+        login_password: "{{ mysql_root_password }}"
+        login_user: root
+        state: import
+        name: "{{ dbconn.db }}"
+        target: /tmp/devops-demo-{{ app.version }}.sql
+      tags: schema
+      

@@ -1,0 +1,14 @@
+---
+  systems:
+    packages:
+      - ntp
+      - tree
+      - vim
+    users:
+      admin:
+        state: present
+        uid: 5001
+        shell: /bin/bash
+        home: /home/admin
+      dojo:
+        state: absent

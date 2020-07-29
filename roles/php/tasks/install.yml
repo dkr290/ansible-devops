@@ -1,0 +1,28 @@
+---
+- name: install php packages Redhat
+  yum:
+    name: "{{ item }}"
+    state: installed
+  
+
+  loop:
+    - php
+    - php-mysql
+  when:  ansible_os_family == 'RedHat'
+  
+  notify:
+    - restart httpd
+
+- name: install php packages Debian
+  apt:
+    name: "{{ item }}"
+    state: present
+  
+
+  loop:
+    - php
+    - php-mysql
+  when: ansible_os_family == 'Debian'
+  
+  notify:
+    - restart httpd

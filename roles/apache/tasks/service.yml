@@ -1,0 +1,9 @@
+- name: start apache web server
+  service:
+    name: "{{ apache.service.name }}"
+    state: "{{ apache.service.state }}"
+    enabled: true
+
+  tags:
+    - apache
+    - service

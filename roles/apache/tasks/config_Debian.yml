@@ -1,0 +1,16 @@
+---
+
+- name: copy httpd config for apache
+  copy:
+    src: apache2.conf
+    dest: /etc/apache2/
+    owner: root
+    group: root
+    mode: '0644'
+    backup: yes
+  notify:
+    - restart httpd
+
+  tags:
+    - apache
+    - config
