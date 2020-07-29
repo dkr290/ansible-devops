@@ -1,5 +1,0 @@
----
-# tasks file for frontend
-- include_vars: "{{ ansible_os_family }}.yml"
-- include_tasks: install.yml
-- include_tasks: config.yml

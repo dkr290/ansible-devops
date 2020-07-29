@@ -1,6 +1,0 @@
----
-- name: app servers play
-  hosts: lbsrv
-  become: true
-  roles:
-    - { role: geerlingguy.haproxy }

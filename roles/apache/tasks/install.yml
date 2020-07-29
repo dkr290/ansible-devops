@@ -1,7 +1,0 @@
-- name: install apache web server
-  package:
-    name: "{{ apache.package.name }}"
-    state: present
-  tags:
-    - apache
-    - install
