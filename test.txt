@@ -2,9 +2,4 @@
 This is a test
 asfsdfgsdfsdfsdfsd
 
-<<<<<<< HEAD
-=======
-asfsdfgsdfsdfsdfsd
-
->>>>>>> parent of f0d648b... adding clean test
 more stuff
