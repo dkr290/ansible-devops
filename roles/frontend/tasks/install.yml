@@ -1,0 +1,4 @@
+- name: install prerequisite packages
+  package:
+    name: unzip
+    state: present

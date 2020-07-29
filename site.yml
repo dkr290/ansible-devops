@@ -1,0 +1,9 @@
+- import_playbook: app.yml
+  tags: 
+    - app
+- import_playbook: db.yml
+  tags:
+    - db
+- import_playbook: lb.yml
+  tags:
+    - lb
