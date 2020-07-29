@@ -1,5 +1,3 @@
-<<<<<<< HEAD
+
 This is a test
-=======
-messed up file
->>>>>>> test
+
